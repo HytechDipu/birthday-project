@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Sakshi!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>🎉 Happy Birthday, Sakshi! 🎉</h1>
+    <p>⏳ Countdown: <span id="timer"></span></p>
+  </header>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h2>📸 Our Memories</h2>
+    <div class="photo-gallery">
+      <img src="photo1.jpg" onclick="showFullImage(this.src)">
+      <img src="photo2.jpg" onclick="showFullImage(this.src)">
+      <img src="photo3.jpg" onclick="showFullImage(this.src)">
+    </div>
+    <p class="hint">Click a photo for full-screen preview ✨</p>
+  </section>
+
+  <!-- Message -->
+  <section class="messages">
+    <h2>💌 Send a Message</h2>
+  <form id="message-form">
+  <textarea id="message-input" placeholder="Write your message..." required></textarea>
+  <button type="submit">Send ❤️</button>
+</form>
+
+  </section>
+
+  <!-- Gift -->
+  <section class="gift">
+    <h2>🎁 Your Surprise Gift</h2>
+    <button type="button" onclick="revealGift()">Click Here for a Surprise!</button>
+
+    <div id="surprise" class="hidden">
+      <p>🎉 Happy Birthday, Sakshi! I love you forever ❤️</p>
+      <video autoplay loop muted playsinline>
+        <source src="love-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Krishna Image -->
+  <img src="krishna.png" class="krishna-image" alt="Krishna">
+
+  <footer>
+    <p>© 2026 SA. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<!-- Lightbox -->
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
+  <img id="lightbox-img" onclick="event.stopPropagation()">
+</div>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
