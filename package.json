@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,13 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HytechDipu/birthday-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HytechDipu/birthday-project/issues"
+  },
+  "homepage": "https://github.com/HytechDipu/birthday-project#readme"
 }

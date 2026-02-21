@@ -157,9 +157,9 @@ video {
 
 .love-envelope {
   position: absolute;
-  left: -10px;
+  left: -30px;
   bottom: 80px;
-  width: 480px;
+  width: 380px;
   cursor: pointer;
   animation: floatEnvelope 4s ease-in-out infinite, glowPulse 2s infinite ease-in-out;
   transition: transform 0.3s ease;

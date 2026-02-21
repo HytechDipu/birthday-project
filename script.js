@@ -135,22 +135,35 @@ function closeLightbox() {
 // ==========================
 // MESSAGE SYSTEM
 // ==========================
-document.getElementById("message-form").addEventListener("submit", function (e) {
+document.getElementById("message-form").addEventListener("submit", async function (e) {
   e.preventDefault();
 
   const input = document.getElementById("message-input");
   const message = input.value.trim();
   if (!message) return;
 
-  const messages = JSON.parse(localStorage.getItem("birthdayMessages")) || [];
-  messages.push({
-    text: message,
-    date: new Date().toLocaleString()
-  });
+  try {
+    const response = await fetch("/save-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message })
+    });
 
-  localStorage.setItem("birthdayMessages", JSON.stringify(messages));
-  input.value = "";
-  alert("Message saved ❤️");
+    const data = await response.json();
+
+    if (data.success) {
+      alert("Message saved in your device ❤️");
+      input.value = "";
+    } else {
+      alert("Failed to save message");
+    }
+
+  } catch (error) {
+    alert("Server not running ❌");
+    console.error(error);
+  }
 });
 
 
