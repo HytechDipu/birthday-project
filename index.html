@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday, Sakshi!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,42 +15,74 @@
     <p>⏳ Countdown: <span id="timer"></span></p>
   </header>
 
-  <!-- Gallery -->
   <section class="gallery">
     <h2>📸 Our Memories</h2>
-    <div class="photo-gallery">
-      <img src="photo1.jpg" onclick="showFullImage(this.src)">
-      <img src="photo2.jpg" onclick="showFullImage(this.src)">
-      <img src="photo3.jpg" onclick="showFullImage(this.src)">
+
+    <div class="carousel">
+      <div class="carousel-inner">
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+        <img src="photo5.jpg">
+        <img src="photo6.jpg">
+        <img src="photo7.jpg">
+      </div>
     </div>
-    <p class="hint">Click a photo for full-screen preview ✨</p>
   </section>
 
-  <!-- Message -->
   <section class="messages">
     <h2>💌 Send a Message</h2>
-  <form id="message-form">
+    <form id="message-form">
   <textarea id="message-input" placeholder="Write your message..." required></textarea>
-  <button type="submit">Send ❤️</button>
-</form>
 
+  <div style="display:flex; gap:10px; justify-content:center;">
+    <button type="submit">Send ❤️</button>
+    <button type="button" onclick="openProposal()">Proposal 💍</button>
+  </div>
+</form>
   </section>
 
-  <!-- Gift -->
   <section class="gift">
     <h2>🎁 Your Surprise Gift</h2>
-    <button type="button" onclick="revealGift()">Click Here for a Surprise!</button>
+    <button onclick="revealGift()">Click Here for a Surprise!</button>
 
     <div id="surprise" class="hidden">
-      <p>🎉 Happy Birthday, Sakshi! I love you forever ❤️</p>
+      <p>"🎉Dear Sakshi,<br>
+         Today is your day<br>
+         to shine like the stars in the night sky.<br> 
+         May your heart be filled with joy,<br>
+          your dreams come true, <br>
+          and your life be as beautiful as the <br>
+          love you bring to everyone around you. <br>
+          Happy Birthday to the most amazing person in the world!<br>
+          With all my love, ❤️"</p>
       <video autoplay loop muted playsinline>
         <source src="love-video.mp4" type="video/mp4">
       </video>
     </div>
   </section>
 
-  <!-- Krishna Image -->
   <img src="krishna.png" class="krishna-image" alt="Krishna">
+  <img src="envelope.png" class="love-envelope" onclick="openLetter()" alt="Love Letter">
+
+<div id="letter-overlay" class="letter-overlay hidden">
+  <div class="letter-paper">
+    <h2>My Love ❤️</h2>
+    <p>
+      From the day you came into my life,
+      everything started feeling different.
+      You make ordinary days special.
+      You make my problems smaller.
+      You make my heart fuller.
+      I don’t just love you...
+      I choose you.
+      Every single day.
+      Forever. 💖
+    </p>
+    <button onclick="closeLetter()">Close</button>
+  </div>
+</div>
 
   <footer>
     <p>© 2026 SA. All rights reserved.</p>
@@ -58,13 +90,12 @@
 
 </div>
 
-<!-- Lightbox -->
-<!-- Lightbox -->
 <div id="lightbox" class="lightbox hidden" onclick="closeLightbox()">
   <img id="lightbox-img" onclick="event.stopPropagation()">
 </div>
 
-
+<div id="hearts-container"></div>
+<div id="butterflies-container"></div>
 
 <script src="script.js"></script>
 </body>

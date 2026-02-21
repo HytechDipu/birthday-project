@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Proposal 💍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 30px;
+  min-height: 60px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.yes:hover {
+  transform: scale(1.1);
+}
+
+.no {
+  background: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1 id="question"></h1>
+
+  <div class="buttons">
+    <button class="yes" onclick="goYes()">Yes 💖</button>
+    <button class="no" id="noBtn" onclick="nextQuestion()">No 😅</button>
+  </div>
+</div>
+
+<script>
+const questions = [
+  "Will you be my girlfriend? 💖",
+  "Are you sure? 😳",
+  "You are really doing this with me? 🥺",
+  "Please? 🙏",
+  "So you want to be my wife? 💍",
+  "Think again... 🤔",
+  "You don’t have any other option other than me 😎"
+];
+
+let current = 0;
+
+const questionEl = document.getElementById("question");
+const noBtn = document.getElementById("noBtn");
+
+questionEl.innerText = questions[current];
+
+function goYes() {
+  window.location.href = "yes.html";
+}
+
+function nextQuestion() {
+  current++;
+
+  if (current < questions.length) {
+    questionEl.innerText = questions[current];
+  }
+
+  // On 7th question (index 6)
+  if (current === questions.length - 1) {
+    noBtn.addEventListener("mouseenter", moveRandom);
+  }
+
+  // If they somehow press No after last question
+  if (current >= questions.length) {
+    current = questions.length - 1;
+  }
+}
+
+function moveRandom() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>
