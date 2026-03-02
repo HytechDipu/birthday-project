@@ -50,6 +50,7 @@ p {
 <div class="container">
   <h1>She Said YES! 💖</h1>
   <p>You just made me the happiest person alive 🥺❤️</p>
+  <p id="redirect-msg">Redirecting to home page in 5 seconds... ⏳</p>
 </div>
 
 <script>
@@ -67,6 +68,19 @@ function createHeart() {
 }
 
 setInterval(createHeart, 300);
+
+  let timeLeft = 5;
+  const msg = document.getElementById("redirect-msg");
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    msg.innerText = `Redirecting to home page in ${timeLeft} seconds... ⏳`;
+
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      window.location.href = "index.html";
+    }
+  }, 1000);
 </script>
 
 </body>

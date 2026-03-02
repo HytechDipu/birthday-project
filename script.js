@@ -78,7 +78,7 @@ window.addEventListener("touchend", () => {
 // ==========================
 // COUNTDOWN
 // ==========================
-const birthday = new Date("June 1, 2026 00:00:00").getTime();
+const birthday = new Date("April 4, 2026 00:00:00").getTime();
 const timer = document.getElementById("timer");
 const heartsContainer = document.getElementById("hearts-container");
 const butterfliesContainer = document.getElementById("butterflies-container");
@@ -222,7 +222,7 @@ function launchFireworks() {
   for (let i = 0; i < 20; i++) {
     setTimeout(() => {
       const sparkle = document.createElement("div");
-      sparkle.textContent = "✨";
+      sparkle.textContent = "🎀";
       sparkle.style.position = "fixed";
       sparkle.style.left = `${Math.random() * 100}vw`;
       sparkle.style.top = `${Math.random() * 100}vh`;
